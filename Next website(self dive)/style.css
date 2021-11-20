@@ -1,0 +1,453 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "kumbh sans", sans-serif;
+}
+body {
+  background-color: black;
+}
+.header {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.headerIcon {
+  display: inline;
+  color: white;
+  font-size: 40px;
+}
+.menu_toggle {
+  display: none;
+  flex-direction: column;
+  width: 30px;
+}
+.bar {
+  margin: 3px auto;
+  width: 30px;
+  background-color: white;
+  height: 3px;
+}
+
+.button {
+  /*to make a anchor link a button*/
+  padding: 15px 20px;
+  background-color: #f77062;
+  color: white;
+  border-radius: 5px;
+}
+.headerIcon p {
+  padding-left: 10px;
+}
+/* the navigation class is the unorderd list 
+
+*/
+.navigation {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.navbarItem {
+  font-size: 20px;
+  padding: 20px;
+}
+.navbar_links {
+  text-decoration: none;
+  color: white;
+}
+.button {
+  text-decoration: none;
+}
+.navbar_links:hover {
+  color: #f77062;
+  transition: all 0.3s ease; /* To make a the color ease in with delay time */
+}
+.button:hover {
+  background-color: blue;
+  transition: all 0.5s ease;
+}
+/*.photoside {
+  background-color: chartreuse;
+  color: white;
+}*/
+
+@media screen and (max-width: 960px) {
+  .menu_toggle {
+    display: flex;
+  }
+}
+/*the javascript adds a class list to the former class and can be identifed with the new combination of name from the javascript class and former class name to affect the elements 
+*/
+.menu_toggle.is-active :nth-child(2) {
+  transition: 0.3s ease-in;
+  opacity: 0;
+}
+.menu_toggle.is-active :nth-child(1) {
+  transition: 0.3s ease-in;
+  transform: translateY(8px) rotate(-45deg);
+}
+.menu_toggle.is-active :nth-child(3) {
+  transition: 0.3s ease-in;
+  transform: translateY(-8px) rotate(45deg);
+}
+/*
+the translate make the bars move to make an x at the middle
+while the rotate : rotates the bar at an axis of the middle
+
+to go up use negative  to go down use positive
+*/
+
+@media screen and (max-width: 960px) {
+  .navigation.active {
+    background: #131313;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 50vh;
+    font-size: 1.6rem;
+  }
+}
+
+/*
+the navigation display changed to grid form flex to make vertically stacked elements and positioned absolute to make the grid get out of the navigation div and opacity 0 to make it invisible until the active is added by Js by a click event on menu_toggle
+*/
+
+@media screen and (max-width: 960px) {
+  .navigation {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: -99;
+    text-align: center;
+  }
+}
+.upper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 40px;
+  justify-self: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+.photoside {
+  align-items: center;
+  justify-content: center;
+}
+
+#phoneTextImage {
+  width: 100%;
+  height: 10%;
+  padding: 20px;
+}
+#getStartedButtonLink {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-image: linear-gradient(to top, #f77062 0%, rgb(253, 54, 147) 100%);
+  font-size: 2rem;
+}
+
+.photoside h1 {
+  font-size: 4rem;
+  background-image: linear-gradient(to top, #910428 0%, #ffb199 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+}
+.photoside h2 {
+  font-size: 4rem;
+  background-image: linear-gradient(to top, #0f9ae6 0%, #39bb25 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.photoside p {
+  font-size: 2rem;
+  background-image: linear-gradient(to top, #ebd703 0%, #fa3d04 100%);
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#hype_paragraph {
+  background-image: linear-gradient(to top, #ebd703 0%, #fa3d04 100%);
+  color: white;
+  font-size: 3rem;
+  margin: 20px;
+  background-color: chocolate;
+  text-align: center;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 768px) {
+  .upper {
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .photoside {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .photoside h1 {
+    font-size: 2.5rem;
+  }
+
+  .photoside h2 {
+    font-size: 3rem;
+  }
+  .photoside p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  #getStartedButtonLink {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .upper {
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .photoside {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .photoside h1 {
+    font-size: 1.5rem;
+  }
+
+  .photoside h2 {
+    font-size: 1.5rem;
+  }
+  .photoside p {
+    margin-top: 0.5rem;
+    font-size: 0.5rem;
+  }
+  #getStartedButtonLink {
+    font-size: 1rem;
+    padding: 7px;
+  }
+}
+
+.services {
+  display: flex; /* to make the inside items orient to what we want with out affecting their display property and make them flexable for the parent div.  if we want to make the flex direction -row  then the items inside will be like books in book shelf; flex-direction: column then the items will be like dishes stalked vertically;   and when using flex wrap: wrap then the the items will be in book shelf form with out affecting their width but increase rows to accomodate the items in reverse when flex wrap is column then two or more columns will be used without affecting the 
+  align items: to align items; opposite to justify content
+  */
+  align-items: center;
+  flex-direction: column;
+}
+
+.services_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.services_card_1 {
+  width: 400px;
+  height: 600px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(17, 17, 17, 0.6) 100%
+    ),
+    url("/images/pic4.jpg");
+  margin: 1rem;
+  background-size: cover;
+  position: relative;
+  color: white;
+  border-radius: 40px;
+}
+.services_card_2 {
+  width: 400px;
+  height: 600px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(17, 17, 17, 0.6) 100%
+    ),
+    url("/images/pic3.jpg");
+  margin: 1rem;
+  background-size: cover;
+  position: relative;
+  color: white;
+  border-radius: 40px;
+}
+
+/*.services_wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 30px 50px;
+  justify-content: space-around;
+  grid-column-gap: 40px;
+}
+
+.services_card1{
+  background-image: url("images/pic4.jpg");
+  height: 600px;
+  width: 400px;
+  background-size:cover;
+}
+.services_card2{
+  background-image: url("images/pic3.jpg");
+  height: 600px;
+  width: 400px;
+  background-size:cover;
+}
+*/
+.services_card_1:hover {
+  transform: scale(1.06);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+.services_card_2:hover {
+  transform: scale(1.06);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+.innerServiceElements {
+  width: 90%;
+  position: relative;
+  margin-top: 430px;
+  margin-left: 20px;
+  color: white;
+}
+.services_button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #f77062;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 449px) {
+  .services_card_1 {
+    width: 250px;
+    height: 375px;
+  }
+  .services_card_2 {
+    width: 250px;
+    height: 375px;
+  }
+  #hype_paragraph {
+    font-size: 1rem;
+  }
+  .innerServiceElements {
+    margin-top: 275px;
+    margin-left: 5%;
+  }
+}
+
+.footer_link_items {
+  color: white;
+}
+.footer_links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+@media screen and (max-width: 915px) {
+  .footer_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer_links_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.footer_link_items {
+  margin: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 160px;
+}
+
+@media screen and (max-width: 420px) {
+  .footer_links_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer_link_items {
+    margin-bottom: 20px;
+  }
+}
+
+.footer_link_items h3,
+li {
+  margin-bottom: 8px;
+}
+.footer_logo {
+  color: white;
+}
+
+.website_rights {
+  color: white;
+}
+.About_website {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  /* max-width: 1000px; */
+  margin: 40px auto 0 auto;
+}
+.website_rights {
+  align-items: center;
+}
+.footer_logo a {
+  text-decoration: none;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+}
+@media screen and (max-width: 449px) {
+  .footer_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
